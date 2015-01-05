@@ -49,7 +49,7 @@ describe('HotPath', function () {
       assume(hp.allocated).to.equal(0);
       hp.set('foo', x);
 
-      assume(hp.allocated).to.be.above(x.length);
+      assume(hp.allocated).to.be.least(x.length);
 
       hp.destroy();
     });
