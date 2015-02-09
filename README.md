@@ -13,6 +13,14 @@ critical code or data of your application without using to much memory.
 Optimizations for the sake of performance are great as long as they do not
 affect the memory management of your process.
 
+#### Our usecase:
+
+Severing files directly out of node's memory minimizes the about of I/O we need
+to serve the given file. The restricted hot path cache ensures that only the top
+requested files get cached and we do not blow out of memory. It only takes
+a small percentage of free memory. 2% by default and 10% if you have more than
+1.7 GB available on your system.
+
 ## Installation
 
 The module is released frequently to the npm registry and can be installed
