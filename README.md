@@ -13,7 +13,7 @@ critical code or data of your application without using to much memory.
 Optimizations for the sake of performance are great as long as they do not
 affect the memory management of your process.
 
-#### Our usecase:
+#### Our use case:
 
 Severing files directly out of node's memory minimizes the about of I/O we need
 to serve the given file. The restricted hot path cache ensures that only the top
@@ -50,7 +50,7 @@ To customize your `HotPath` instance you can supply the following options in the
 constructor: 
 
 - `maximum`: The maximum amount of memory we can allocate for our given cache.
-  Defaults to 1.7 gig.
+  Defaults to `1.7 gb` the value is parsed with the [bytes] module.
 - `available`: The amount of memory available on the system. We will calculate
   our cache size based on this. It should be given as bytes. Defaults to the
   `os.freemem()` result.
@@ -139,3 +139,5 @@ hotpath.destroy();
 ## License
 
 MIT
+
+[bytes]: http://npm.im/bytes

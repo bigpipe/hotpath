@@ -1,6 +1,7 @@
 'use strict';
 
-var os = require('os');
+var bytes = require('bytes')
+  , os = require('os');
 
 /**
  * HotPath: A memory constrained cache for HotPath or critical files. These
@@ -25,12 +26,12 @@ function HotPath(options) {
 
   options = options || {};
 
-  this.maximum = +options.maximum || HotPath.maximum; // Maximum memory available.
-  this.free = this.ram(options.available);            // Free mem we can use.
-  this.prefix = options.prefix || '_HotPath';         // Prefix for keys.
-  this.countkey = options.key || false;               // Also include key length.
-  this.storage = Object.create(null);                 // Empty object.
-  this.allocated = 0;                                 // Amount of mem we use.
+  this.maximum = bytes(options.maximum || HotPath.maximum); // Max memory available.
+  this.free = this.ram(options.available);                  // Free mem we can use.
+  this.prefix = options.prefix || '_HotPath';               // Prefix for keys.
+  this.countkey = options.key || false;                     // Include key length.
+  this.storage = Object.create(null);                       // Empty object.
+  this.allocated = 0;                                       // size of mem used.
 }
 
 /**
@@ -38,10 +39,10 @@ function HotPath(options) {
  * to take in account that a single node process dies with ENOMEM around 1.7 gb.
  * So it makes sense to set this as an upper limit.
  *
- * @type {Number}
+ * @type {String}
  * @private
  */
-HotPath.maximum = 1700000000;
+HotPath.maximum = '1.7 gb';
 
 /**
  * Add a new value to the internal buffer.
