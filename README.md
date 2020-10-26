@@ -1,6 +1,6 @@
 # Hotpath
 
-[![From bigpipe.io][from]](http://bigpipe.io)[![Version npm][version]](http://browsenpm.org/package/hotpath)[![Build Status][build]](https://travis-ci.org/bigpipe/hotpath)[![Dependencies][david]](https://david-dm.org/bigpipe/hotpath)[![Coverage Status][cover]](https://coveralls.io/r/bigpipe/hotpath?branch=master)
+[![Version npm][version]](http://browsenpm.org/package/hotpath)[![Build Status][build]](https://travis-ci.org/bigpipe/hotpath)[![Dependencies][david]](https://david-dm.org/bigpipe/hotpath)[![Coverage Status][cover]](https://coveralls.io/r/bigpipe/hotpath?branch=master)
 
 [from]: https://img.shields.io/badge/from-bigpipe.io-9d8dff.svg?style=flat-square
 [version]: http://img.shields.io/npm/v/hotpath.svg?style=flat-square
